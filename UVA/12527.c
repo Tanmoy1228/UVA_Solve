@@ -1,0 +1,61 @@
+#include<stdio.h>
+int main()
+{
+    int n,m;
+    while(scanf("%d %d",&n,&m)==2)
+    {
+        int i,j,c=0,l,k,z,o,t,a[100];
+        if(n>m)
+        {
+            t=n;
+            n=m;
+            m=t;
+        }
+        for(i=n;i<=m;i++)
+        {
+            j=i;
+            z=0;
+            k=0;
+            while(j>0)
+            {
+                a[k]=j%10;
+                k++;
+                j=j/10;
+            }
+            for(l=0;l<k-1;l++)
+            {
+                for(o=l+1;o<l;o++)
+                {
+                    if(a[l]>a[o])
+                    {
+                        t=a[l];
+                        a[l]=a[o];
+                        a[o]=t;
+                    }
+                }
+            }
+            for(l=0;l<k;l++)
+            {
+                for(o=l+1;o<k;o++)
+                {
+                    if(a[l]==a[o])
+                    {
+                        z=1;
+                        break;
+                    }
+                }
+                if(z==1)
+                {
+                    break;
+                }
+            }
+            if(z==1)
+            {
+                continue;
+            }
+            c++;
+        }
+        printf("%d\n",c);
+    }
+    return 0;
+}

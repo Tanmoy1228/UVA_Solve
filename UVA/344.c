@@ -1,0 +1,117 @@
+#include<stdio.h>
+int main()
+{
+    int k;
+    while(scanf("%d",&k)==1)
+    {
+        char a[1000];
+        int i=0,j,b=0,c=0,d=0,e=0,f=0,n,p;
+        if(k<=0)
+        {
+            break;
+        }
+        for(p=1;p<=k;p++)
+        {
+        n=p;
+        if(n==100)
+        {
+            a[i]='c';
+            i++;
+            n=n-100;
+        }
+        while(n>=50)
+        {
+            if(n>=90)
+            {
+                a[i]='x';
+                i++;
+                a[i]='c';
+                i++;
+                n=n-90;
+            }
+            else
+            {
+                a[i]='l';
+                i++;
+                n=n-50;
+            }
+        }
+        while(n>=10)
+        {
+            if(n>=40)
+            {
+                a[i]='x';
+                i++;
+                a[i]='l';
+                i++;
+                n=n-40;
+            }
+            else
+            {
+                a[i]='x';
+                i++;
+                n=n-10;
+            }
+        }
+        while(n>=5)
+        {
+            if(n>=9)
+            {
+                a[i]='i';
+                i++;
+                a[i]='x';
+                i++;
+                n=n-9;
+            }
+            else
+            {
+                a[i]='v';
+                i++;
+                n=n-5;
+            }
+        }
+        while(n>=1)
+        {
+            if(n>=4)
+            {
+                a[i]='i';
+                i++;
+                a[i]='v';
+                i++;
+                n=n-4;
+            }
+            else
+            {
+                a[i]='i';
+                i++;
+                n=n-1;
+            }
+        }
+        }
+        for(j=0;j<i;j++)
+        {
+            if(a[j]=='i')
+            {
+                b++;
+            }
+            else if(a[j]=='v')
+            {
+                c++;
+            }
+            else if(a[j]=='x')
+            {
+                d++;
+            }
+            else if(a[j]=='l')
+            {
+                e++;
+            }
+            else if(a[j]=='c')
+            {
+                f++;
+            }
+        }
+        printf("%d: %d i, %d v, %d x, %d l, %d c\n",k,b,c,d,e,f);
+    }
+    return 0;
+}
